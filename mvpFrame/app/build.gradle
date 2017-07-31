@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.example.mvpframe"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            buildConfigField "String","API_BASE_URL","\"http://c.m.163.com/nc/\""
+            buildConfigField "String","start_page","\"0\""
+            buildConfigField "String","end_page","\"20\""
+            minifyEnabled false
+        }
+        release {
+            buildConfigField "String","API_BASE_URL","\"http://c.m.163.com/nc/\""
+            buildConfigField "String","start_page","\"0\""
+            buildConfigField "String","end_page","\"20\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(':lib.rx')
+    compile rootProject.ext.dependencies.appcompatV7
+    compile rootProject.ext.dependencies.supportV4
+    compile rootProject.ext.dependencies.recyclerview
+    compile rootProject.ext.dependencies.cardview
+    compile rootProject.ext.dependencies.ButterKnifeV7
+    compile rootProject.ext.dependencies.Glide
+    testCompile 'junit:junit:4.12'
+}
