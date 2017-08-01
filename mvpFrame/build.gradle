@@ -51,22 +51,15 @@ ext {
             Glide           : 'com.github.bumptech.glide:glide:3.7.0',
             //Permission request AUTO. If you have any question, pls search "easypermissions android"
             EasyPermissions : 'pub.devrel:easypermissions:0.2.1',
-            //动画
-            NineOldAndroids : 'com.nineoldandroids:library:2.4.0',
             //Banner
-            nineoldandroids : 'com.nineoldandroids:library:2.4.0',
             FlycoBanner     : 'com.flyco.banner:FlycoBanner_Lib:2.0.2@aar',
             //FlycoTabLayout segmentTab(switch button) 顶部切换按钮
             FlycoTabLayout  : 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar',
-            //FlycoLabelView 标签
-            FlycoLabelView  : 'com.flyco.labelview:FlycoLabelView_Lib:1.0.2@aar',
             //selectableroundedimageview using it in rounded norner 圆角控件
             RoundedImageView: 'com.joooonho:selectableroundedimageview:1.0.1',
             //Custom Log
             logging         : 'de.mindpipe.android:android-logging-log4j:1.0.3',
             log4j           : 'log4j:log4j:1.2.17',
-            //Custom font
-            Calligraphy:'uk.co.chrisjenx:calligraphy:2.2.0',
             //scale imageview
             ScaleImageView:'com.davemorrissey.labs:subsampling-scale-image-view:3.4.1',
             //状态栏着色

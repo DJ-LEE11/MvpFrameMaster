@@ -6,7 +6,7 @@ import com.example.librx.mvp.contract.IBaseActivityContract;
 import com.example.librx.mvp.presenter.IBasePresenterImpl;
 import com.example.librx.rx.http.ApiException;
 import com.example.librx.rx.interfaces.OnModelCallBack;
-import com.example.librx.ui.ToastUitls;
+import com.example.libutil.ToastUitls;
 import com.example.mvpframe.bean.NewsInfo;
 import com.example.mvpframe.mvp.contract.IHomeContract;
 import com.example.mvpframe.mvp.model.IHomeModel;

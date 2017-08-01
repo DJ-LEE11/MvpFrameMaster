@@ -2,7 +2,7 @@ package com.example.librx.rx.http;
 
 import android.text.TextUtils;
 
-import com.example.librx.ui.LogUtils;
+import com.example.libutil.LogUtils;
 
 import java.io.IOException;
 

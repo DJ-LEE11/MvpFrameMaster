@@ -34,11 +34,13 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(':lib.rx')
+    compile project(':lib.util')
     compile rootProject.ext.dependencies.appcompatV7
     compile rootProject.ext.dependencies.supportV4
     compile rootProject.ext.dependencies.recyclerview
     compile rootProject.ext.dependencies.cardview
     compile rootProject.ext.dependencies.ButterKnifeV7
     compile rootProject.ext.dependencies.Glide
+    compile rootProject.ext.dependencies.FlycoTabLayout
     testCompile 'junit:junit:4.12'
 }

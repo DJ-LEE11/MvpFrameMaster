@@ -1,4 +1,4 @@
-package com.example.librx.ui;
+package com.example.libutil;
 
 import android.content.Context;
 import android.os.Build;

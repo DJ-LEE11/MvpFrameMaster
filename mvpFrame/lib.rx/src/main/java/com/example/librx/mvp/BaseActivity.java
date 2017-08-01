@@ -18,7 +18,7 @@ import com.example.librx.mvp.contract.IBaseContract;
 import com.example.librx.rx.http.ApiException;
 import com.example.librx.ui.LoadingDialog;
 import com.example.librx.ui.ThinLineSpinFadeLoaderIndicator;
-import com.example.librx.ui.ToastUitls;
+import com.example.libutil.ToastUitls;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.List;
