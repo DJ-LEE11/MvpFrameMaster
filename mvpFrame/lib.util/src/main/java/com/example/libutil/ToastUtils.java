@@ -9,7 +9,7 @@ import android.widget.Toast;
  * Created by K.W. on 17/3/10.
  */
 
-public class ToastUitls {
+public class ToastUtils {
 
     private static Toast toast;
 
