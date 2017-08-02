@@ -3,11 +3,24 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etCityId"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:hint="城市Id"
+        android:inputType="number"
+        android:maxLines="20"/>
+
+    <Button
+        android:id="@+id/btnGetInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取信息"/>
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="主页"
-        android:textSize="20dp"
-        android:id="@+id/tv"/>
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"/>
 </LinearLayout>

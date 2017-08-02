@@ -28,8 +28,8 @@ public class ServerResultWithDataFunc <T extends BaseResult> implements Function
     //将需要的保留的信息留在onNext中
     public List<String> getStayCode() {
         List<String> list = new ArrayList<>();
-        //请求成功返回码
-        list.add("0000");
+        //请求成功返回码(该天气API的请求成功返回码是200)
+        list.add("200");
         return list;
     }
 }

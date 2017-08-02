@@ -10,22 +10,22 @@ import com.example.librx.rx.BaseResult;
 public class ServerException extends Exception {
     private String code;
     private String msg;
-    Object data;
+    Object value;
 
     public ServerException(String code, String msg) {
         this(code, msg, null);
     }
 
-    public ServerException(String code, String msg, Object data) {
+    public ServerException(String code, String msg, Object value) {
         this.code = code;
         this.msg = msg;
-        this.data = data;
+        this.value = value;
     }
 
     public ServerException(BaseResult baseResult) {
         this.code = baseResult.code;
-        this.msg = baseResult.msg;
-        this.data = baseResult.data;
+        this.msg = baseResult.message;
+        this.value = baseResult.value;
     }
 
     public String getCode() {
@@ -44,11 +44,11 @@ public class ServerException extends Exception {
         this.msg = msg;
     }
 
-    public Object getData() {
-        return data;
+    public Object getValue() {
+        return value;
     }
 
-    public void setData(Object data) {
-        this.data = data;
+    public void setValue(Object value) {
+        this.value = value;
     }
 }

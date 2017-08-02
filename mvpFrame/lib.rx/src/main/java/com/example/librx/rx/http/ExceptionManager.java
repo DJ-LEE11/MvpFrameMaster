@@ -61,7 +61,7 @@ public class ExceptionManager {
             } else {
                 ex = new ApiException(resultException.getCode(), resultException);
                 ex.setDisplayMessage(resultException.getMsg());
-                ex.setData(resultException.getData());
+                ex.setData(resultException.getValue());
             }
         } else if (e instanceof JsonParseException
                 || e instanceof JSONException

@@ -13,15 +13,19 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String", "API_BASE_URL", "\"http://c.m.163.com/nc/\""
+            buildConfigField "String", "API_NEWS_URL", "\"http://c.m.163.com/nc/\""
+            buildConfigField "String", "API_WEATHER_URL", "\"http://aider.meizu.com/app/weather/\""
             buildConfigField "String", "start_page", "\"0\""
             buildConfigField "String", "end_page", "\"20\""
+            buildConfigField "String", "city_id", "\"101240101\""
             minifyEnabled false
         }
         release {
             buildConfigField "String", "API_BASE_URL", "\"http://c.m.163.com/nc/\""
+            buildConfigField "String", "API_WEATHER_URL", "\"http://aider.meizu.com/app/weather/\""
             buildConfigField "String", "start_page", "\"0\""
             buildConfigField "String", "end_page", "\"20\""
+            buildConfigField "String", "city_id", "\"101240101\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

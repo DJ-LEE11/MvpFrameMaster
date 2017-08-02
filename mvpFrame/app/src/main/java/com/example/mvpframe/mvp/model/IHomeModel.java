@@ -28,7 +28,7 @@ public class IHomeModel extends IBaseModelImpl implements IHomeContract.Model {
     @Override
     public ResourceSubscriber getNews(String startPager, String endPager, OnModelCallBack<NewsInfo> callBack) {
         return startObservable(ApiServiceFactory.INSTANCE
-                        .create(mContext, BuildConfig.API_BASE_URL, ApiService.class)
+                        .create(mContext, BuildConfig.API_NEWS_URL, ApiService.class)
                         .getNews(startPager, endPager)
                         .onErrorResumeNext(new HttpResultFunc<NewsInfo>())
                 , new CustomResourceSubscriber<NewsInfo>(callBack));

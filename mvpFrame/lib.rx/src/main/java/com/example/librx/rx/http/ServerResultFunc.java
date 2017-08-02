@@ -21,7 +21,7 @@ public class ServerResultFunc <T> implements Function<BaseResult<T>, T> {
         //通过请求码判断是否请求成功
         if (codes.contains(baseResult.code)) {
 
-            return baseResult.data;
+            return baseResult.value;
         }
         throw new ServerException(baseResult);
     }
@@ -29,8 +29,8 @@ public class ServerResultFunc <T> implements Function<BaseResult<T>, T> {
     //将需要的保留的信息留在onNext中
     public List<String> getStayCode() {
         List<String> list = new ArrayList<>();
-        //请求成功返回码
-        list.add("0000");
+        //请求成功返回码(该天气API的请求成功返回码是200)
+        list.add("200");
         return list;
     }
 }
