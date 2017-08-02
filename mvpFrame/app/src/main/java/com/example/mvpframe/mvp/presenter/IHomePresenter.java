@@ -6,7 +6,7 @@ import com.example.librx.mvp.contract.IBaseActivityContract;
 import com.example.librx.mvp.presenter.IBasePresenterImpl;
 import com.example.librx.rx.http.ApiException;
 import com.example.librx.rx.interfaces.OnModelCallBack;
-import com.example.libutil.ToastUitls;
+import com.example.libutil.ToastUtils;
 import com.example.mvpframe.bean.NewsInfo;
 import com.example.mvpframe.mvp.contract.IHomeContract;
 import com.example.mvpframe.mvp.model.IHomeModel;
@@ -33,7 +33,7 @@ public class IHomePresenter<T extends IHomeContract.View & IBaseActivityContract
         String startPage = getView().getStartPage();
         String endPage = getView().getEndPage();
         if (startPage.isEmpty() || endPage.isEmpty()){
-            ToastUitls.show(mContext,"输入为空");
+            ToastUtils.show(mContext,"输入为空");
             return;
         }
         addSubscription(mModel.getNews(startPage, endPage, new OnModelCallBack<NewsInfo>() {
@@ -63,6 +63,5 @@ public class IHomePresenter<T extends IHomeContract.View & IBaseActivityContract
                 getView().dismissLoading();
             }
         }));
-
     }
 }

@@ -13,15 +13,15 @@ android {
     }
     buildTypes {
         debug {
-            buildConfigField "String","API_BASE_URL","\"http://c.m.163.com/nc/\""
-            buildConfigField "String","start_page","\"0\""
-            buildConfigField "String","end_page","\"20\""
+            buildConfigField "String", "API_BASE_URL", "\"http://c.m.163.com/nc/\""
+            buildConfigField "String", "start_page", "\"0\""
+            buildConfigField "String", "end_page", "\"20\""
             minifyEnabled false
         }
         release {
-            buildConfigField "String","API_BASE_URL","\"http://c.m.163.com/nc/\""
-            buildConfigField "String","start_page","\"0\""
-            buildConfigField "String","end_page","\"20\""
+            buildConfigField "String", "API_BASE_URL", "\"http://c.m.163.com/nc/\""
+            buildConfigField "String", "start_page", "\"0\""
+            buildConfigField "String", "end_page", "\"20\""
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -42,5 +42,6 @@ dependencies {
     compile rootProject.ext.dependencies.ButterKnifeV7
     compile rootProject.ext.dependencies.Glide
     compile rootProject.ext.dependencies.FlycoTabLayout
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }

@@ -18,7 +18,7 @@ import com.example.librx.mvp.contract.IBaseContract;
 import com.example.librx.rx.http.ApiException;
 import com.example.librx.ui.LoadingDialog;
 import com.example.librx.ui.ThinLineSpinFadeLoaderIndicator;
-import com.example.libutil.ToastUitls;
+import com.example.libutil.ToastUtils;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import java.util.List;
@@ -77,7 +77,7 @@ public abstract class BaseActivity<T extends IBaseContract.Presenter> extends Ap
 
     @Override
     public void showToast(String str) {
-        ToastUitls.show(getBaseContext(), str);
+        ToastUtils.show(getBaseContext(), str);
     }
 
     @Override

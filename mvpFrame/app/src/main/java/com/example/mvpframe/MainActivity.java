@@ -5,6 +5,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.librx.mvp.BaseActivity;
+import com.example.libutil.IntentUtils;
 import com.example.mvpframe.mvp.contract.IHomeContract;
 import com.example.mvpframe.mvp.presenter.IHomePresenter;
 
@@ -46,7 +47,7 @@ public class MainActivity extends BaseActivity implements IHomeContract.View {
     }
 
     @OnClick(R.id.btnGetInfo)
-    public void onViewClicked() {
+    public void onGetInfo() {
         mIHomePresenter.getNews();
     }
 
@@ -63,5 +64,13 @@ public class MainActivity extends BaseActivity implements IHomeContract.View {
     @Override
     public void showNews(String newsInfo) {
         mTvInfo.setText(newsInfo);
+    }
+
+    @OnClick(R.id.btnOpen)
+    public void onOpen() {
+        new IntentUtils.Builder(this)
+                .to(HomeActivity.class)
+                .build()
+                .start();
     }
 }
