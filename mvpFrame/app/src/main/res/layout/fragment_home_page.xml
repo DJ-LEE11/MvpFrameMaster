@@ -3,7 +3,9 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
-
+    <include
+        android:id="@+id/header_btn_layout"
+        layout="@layout/header_btn_layout" />
     <EditText
         android:id="@+id/etCityId"
         android:layout_width="70dp"

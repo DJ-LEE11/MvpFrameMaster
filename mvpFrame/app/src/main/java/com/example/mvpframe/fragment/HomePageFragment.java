@@ -13,6 +13,7 @@ import com.example.mvpframe.BuildConfig;
 import com.example.mvpframe.R;
 import com.example.mvpframe.mvp.contract.IFragmentContract;
 import com.example.mvpframe.mvp.presenter.IFragmentPresenter;
+import com.example.mvpframe.util.ToolbarUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,8 +50,22 @@ public class HomePageFragment extends BaseFragment implements IFragmentContract.
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home_page, container, false);
         ButterKnife.bind(this, view);
+        initTitle(view);
         mEtCityId.setText(BuildConfig.city_id);
         return view;
+    }
+
+    private void initTitle(View view) {
+        View header = view.findViewById(R.id.header_btn_layout);
+        ToolbarUtils toolbar = new ToolbarUtils(getActivity(), header);
+        toolbar.initTitle("首页");
+        toolbar.initBackClick(ToolbarUtils.NO_RES, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+        toolbar.initMenuClick(R.mipmap.ic_discover_in_active, "", null, ToolbarUtils.NO_ICON, "", null);
     }
 
     @Override

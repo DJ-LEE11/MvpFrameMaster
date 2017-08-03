@@ -1,6 +1,7 @@
 package com.example.mvpframe;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -8,6 +9,7 @@ import com.example.librx.mvp.BaseActivity;
 import com.example.libutil.IntentUtils;
 import com.example.mvpframe.mvp.contract.IHomeContract;
 import com.example.mvpframe.mvp.presenter.IHomePresenter;
+import com.example.mvpframe.util.ToolbarUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +34,7 @@ public class MainActivity extends BaseActivity implements IHomeContract.View {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        initTitle();
         mEtStartPage.setText(BuildConfig.start_page);
         mEtEndPage.setText(BuildConfig.end_page);
     }
@@ -44,6 +47,12 @@ public class MainActivity extends BaseActivity implements IHomeContract.View {
         mIHomePresenter = new IHomePresenter(this);
         list.add(mIHomePresenter);
         return list;
+    }
+
+    private void initTitle() {
+        View view = findViewById(R.id.header_btn_layout);
+        ToolbarUtils toolbar = new ToolbarUtils(this, view);
+        toolbar.initTitle("MVP");
     }
 
     @OnClick(R.id.btnGetInfo)
