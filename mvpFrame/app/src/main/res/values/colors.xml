@@ -3,4 +3,26 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Toolbar字体颜色 -->
+    <color name="colorToolbarTitle">#606060</color>
+
+    <!-- Toolbar标题栏背景颜色 -->
+    <color name="colorToolbarBg">#eeeeee</color>
+
+    <!-- 间隔线条颜色 -->
+    <color name="line_color">#e5e5e5</color>
+
+    <!-- 按钮颜色 白色系 -->
+    <color name="btn_color_white_normal">#FFFFFF</color>
+    <color name="btn_color_white_pressed">#e5e5e5</color>
+    <color name="btn_color_white_disable">#CCCCCC</color>
+
+    <!-- 一号字体颜色 -->
+    <color name="text_color_01">#333333</color>
+    <!-- 其他字体颜色 -->
+    <color name="text_color_02">#606060</color>
+
+    <!-- PopupWindow半透明的背景色 -->
+    <color name="pop_half_transparent">#26000000</color>
 </resources>

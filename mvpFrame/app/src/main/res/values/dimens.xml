@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 四类字体大小 -->
+    <dimen name="text_size_20">20dp</dimen>
+    <dimen name="text_size_18">18dp</dimen>
+    <dimen name="text_size_16">16dp</dimen>
+    <dimen name="text_size_14">14dp</dimen>
+    <dimen name="text_size_12">12dp</dimen>
+    <dimen name="text_size_30">30dp</dimen>
+    <dimen name="text_size_35">35dp</dimen>
+    <dimen name="text_size_10">10dp</dimen>
+
+    <!-- 标题栏高度 -->
+    <dimen name="toolbar_height">50dp</dimen>
+</resources>

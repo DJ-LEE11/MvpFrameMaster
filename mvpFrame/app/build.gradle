@@ -46,6 +46,6 @@ dependencies {
     compile rootProject.ext.dependencies.ButterKnifeV7
     compile rootProject.ext.dependencies.Glide
     compile rootProject.ext.dependencies.FlycoTabLayout
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile rootProject.ext.dependencies.design
     testCompile 'junit:junit:4.12'
 }

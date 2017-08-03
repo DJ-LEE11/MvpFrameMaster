@@ -1,11 +1,59 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- ToolBar菜单样式 -->
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/colorAccent</item> <!--颜色-->
+        <item name="android:textSize">18dp</item> <!--字体大小-->
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="line_style">
+        <item name="android:background">@color/line_color</item>
+        <item name="android:layout_height">@dimen/line_height</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <!-- 页面菜单条目 -->
+    <style name="item_layout">
+        <item name="android:background">@drawable/selector_btn_white</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+    </style>
+
+    <!--toolbar下拉菜单图标-->
+    <style name="item_img_style">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="item_tv_style" parent="@style/layout_allWraped_style">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/text_color_01</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/text_color_02</item>
+    </style>
+
+    <style name="item_tv_forth_style" parent="@style/layout_allWraped_style">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/text_color_02</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:singleLine">true</item>
     </style>
 
 </resources>
