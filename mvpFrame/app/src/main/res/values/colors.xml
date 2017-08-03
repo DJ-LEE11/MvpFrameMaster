@@ -13,6 +13,12 @@
     <!-- 间隔线条颜色 -->
     <color name="line_color">#e5e5e5</color>
 
+    <!-- commonTabLayout指示颜色 -->
+    <color name="tl_indicator_color">#606060</color>
+
+    <!-- commonTabLayout背景颜色 -->
+    <color name="tl_bar_color">#eeeeee</color>
+
     <!-- 按钮颜色 白色系 -->
     <color name="btn_color_white_normal">#FFFFFF</color>
     <color name="btn_color_white_pressed">#e5e5e5</color>

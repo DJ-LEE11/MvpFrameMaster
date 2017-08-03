@@ -10,7 +10,7 @@ import com.example.libutil.SharedFileUtils;
 import com.example.mvpframe.fragment.DiscoverFragment;
 import com.example.mvpframe.fragment.HomePageFragment;
 import com.example.mvpframe.fragment.PersonCenterFragment;
-import com.example.mvpframe.util.MyTabUtils;
+import com.example.mvpframe.util.BottomTabUtils;
 import com.example.mvpframe.util.TabEntity;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         initBottomNavigationBar();
         sp = new SharedFileUtils(this);
         mFragmentManager = getSupportFragmentManager();
-        goToFragment(sp.getInt(SharedFileUtils.CURRENT_FRAGMENT_TAB));
+        goToFragment(sp.getInt(SharedFileUtils.BOTTOM_CURRENT_FRAGMENT_TAB));
 
     }
 
@@ -73,17 +73,17 @@ public class HomeActivity extends AppCompatActivity {
 
     public void goToFragment(int position) {
         switch (position) {
-            case MyTabUtils.HOME_PAGE_TAB:
+            case BottomTabUtils.HOME_PAGE_TAB:
                 switchHome();
                 break;
-            case MyTabUtils.DISCOVER_TAB:
+            case BottomTabUtils.DISCOVER_TAB:
                 switchDiscover();
                 break;
-            case MyTabUtils.PERSON_CENTER_TAB:
+            case BottomTabUtils.PERSON_CENTER_TAB:
                 switchPerson();
                 break;
         }
-        sp.putInt(SharedFileUtils.CURRENT_FRAGMENT_TAB,position);
+        sp.putInt(SharedFileUtils.BOTTOM_CURRENT_FRAGMENT_TAB,position);
         mBottomNavigationBar.setCurrentTab(position);
     }
 

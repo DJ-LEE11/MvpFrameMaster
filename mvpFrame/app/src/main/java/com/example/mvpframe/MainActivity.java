@@ -37,6 +37,10 @@ public class MainActivity extends BaseActivity implements IHomeContract.View {
         initTitle();
         mEtStartPage.setText(BuildConfig.start_page);
         mEtEndPage.setText(BuildConfig.end_page);
+        new IntentUtils.Builder(this)
+                .to(HomeActivity.class)
+                .build()
+                .start();
     }
 
     @Override
