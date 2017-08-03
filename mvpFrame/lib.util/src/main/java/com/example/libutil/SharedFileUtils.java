@@ -10,6 +10,9 @@ import android.content.SharedPreferences.Editor;
  */
 public class SharedFileUtils {
     public static final String FILE_NAME = "pk_file";
+
+    public static final String CURRENT_FRAGMENT_TAB = "CURRENT_FRAGMENT_TAB";
+
     private SharedPreferences sp;
 
     public SharedFileUtils(Context context) {

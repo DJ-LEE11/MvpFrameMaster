@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.libutil.SharedFileUtils;
 import com.example.mvpframe.fragment.DiscoverFragment;
 import com.example.mvpframe.fragment.HomePageFragment;
 import com.example.mvpframe.fragment.PersonCenterFragment;
@@ -27,14 +28,18 @@ public class HomeActivity extends AppCompatActivity {
 
     private static FragmentManager mFragmentManager;
 
+    private SharedFileUtils sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
         initBottomNavigationBar();
+        sp = new SharedFileUtils(this);
         mFragmentManager = getSupportFragmentManager();
-        switchHome();
+        goToFragment(sp.getInt(SharedFileUtils.CURRENT_FRAGMENT_TAB));
+
     }
 
     protected void initBottomNavigationBar() {
@@ -78,6 +83,8 @@ public class HomeActivity extends AppCompatActivity {
                 switchPerson();
                 break;
         }
+        sp.putInt(SharedFileUtils.CURRENT_FRAGMENT_TAB,position);
+        mBottomNavigationBar.setCurrentTab(position);
     }
 
     public void switchHome(){
@@ -122,6 +129,25 @@ public class HomeActivity extends AppCompatActivity {
             } else {
                 //显示到Activity中并回复状态
                 transaction.show(to).commitAllowingStateLoss();
+            }
+        }
+    }
+
+    @Override
+    protected void onStop() {
+//        hideAllFragment();
+        super.onStop();
+    }
+
+    //隐藏所有fragment
+    private void hideAllFragment() {
+        String[] tags = new String[]{HomePageFragment.TAG,DiscoverFragment.TAG,PersonCenterFragment.TAG};
+        Fragment fragment = null;
+        for (String tag : tags) {
+            fragment = mFragmentManager.findFragmentByTag(tag);
+            if (fragment!=null){
+                FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
+                fragmentTransaction.hide(fragment);
             }
         }
     }
