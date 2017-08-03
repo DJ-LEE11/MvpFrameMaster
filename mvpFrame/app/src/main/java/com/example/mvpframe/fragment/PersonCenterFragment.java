@@ -30,8 +30,6 @@ public class PersonCenterFragment extends Fragment {
     private static PersonCenterFragment fragment;
 
     private static FragmentManager mFragmentManager;
-    private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
-    private String[] mTitles = {"消息", "活动"};
     private SharedFileUtils sp;
 
     @Bind(R.id.commonTabLayout)
@@ -50,7 +48,6 @@ public class PersonCenterFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_person_center, container, false);
         ButterKnife.bind(this, view);
         initTitle(view);
-        initTabData();
         initTab();
         sp = new SharedFileUtils(getActivity());
         mFragmentManager = getChildFragmentManager();
@@ -66,13 +63,14 @@ public class PersonCenterFragment extends Fragment {
         toolbar.initMenuClick(R.mipmap.ic_discover_in_active, "", null, ToolbarUtils.NO_ICON, "", null);
     }
 
-    private void initTabData() {
+
+    private void initTab() {
+        ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
+        String[] mTitles = {"消息", "活动"};
         for (int i = 0; i < mTitles.length; i++) {
             mTabEntities.add(new TabEntity(mTitles[i], 0, 0));
         }
-    }
 
-    private void initTab() {
         mCommonTabLayout.setTabData(mTabEntities);
         mCommonTabLayout.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
@@ -96,30 +94,31 @@ public class PersonCenterFragment extends Fragment {
                 switchCenterAction();
                 break;
         }
-        sp.putInt(SharedFileUtils.TOP_CURRENT_FRAGMENT_TAB,position);
+        sp.putInt(SharedFileUtils.TOP_CURRENT_FRAGMENT_TAB, position);
         mCommonTabLayout.setCurrentTab(position);
     }
 
     private void switchMessage() {
         Fragment fragment = mFragmentManager.findFragmentByTag(MessageFragment.TAG);
-        if (fragment==null){
+        if (fragment == null) {
             fragment = MessageFragment.newInstance();
         }
-        switchContent(mFragment,fragment,MessageFragment.TAG);
+        switchContent(mFragment, fragment, MessageFragment.TAG);
 
     }
 
     private void switchCenterAction() {
         Fragment fragment = mFragmentManager.findFragmentByTag(CenterActionFragment.TAG);
-        if (fragment==null){
+        if (fragment == null) {
             fragment = CenterActionFragment.newInstance();
         }
-        switchContent(mFragment,fragment,CenterActionFragment.TAG);
+        switchContent(mFragment, fragment, CenterActionFragment.TAG);
     }
 
     //切换Fragment
     private Fragment mFragment;
-    public void switchContent(Fragment from, Fragment to,String tag) {
+
+    public void switchContent(Fragment from, Fragment to, String tag) {
         if (mFragment != to) {
             mFragment = to;
             FragmentTransaction transaction = mFragmentManager.beginTransaction();
@@ -129,7 +128,7 @@ public class PersonCenterFragment extends Fragment {
             }
             if (!to.isAdded()) {// 先判断是否被add过
                 //add下一个到Activity中
-                transaction.add(R.id.frameLayout, to,tag);
+                transaction.add(R.id.frameLayout, to, tag);
                 transaction.commit();
             } else {
                 //显示到Activity中并回复状态
