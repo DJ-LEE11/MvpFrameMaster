@@ -39,12 +39,15 @@ dependencies {
     })
     compile project(':lib.rx')
     compile project(':lib.util')
+    compile project(':lib.flycobanner')
     compile rootProject.ext.dependencies.appcompatV7
     compile rootProject.ext.dependencies.supportV4
     compile rootProject.ext.dependencies.recyclerview
     compile rootProject.ext.dependencies.cardview
     compile rootProject.ext.dependencies.ButterKnifeV7
     compile rootProject.ext.dependencies.FlycoTabLayout
+    compile rootProject.ext.dependencies.Nineoldandroids
+    compile rootProject.ext.dependencies.FlycoBanner
     compile rootProject.ext.dependencies.design
     testCompile 'junit:junit:4.12'
 }

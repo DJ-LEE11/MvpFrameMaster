@@ -22,10 +22,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * Created by Riven on 2016/12/22.
- * Email: 1819485687@qq.com
- */
 public class HomePageFragment extends BaseFragment implements IFragmentContract.View {
 
     public static final String TAG = "HomeFragment";

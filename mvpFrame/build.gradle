@@ -52,6 +52,7 @@ ext {
             //Permission request AUTO. If you have any question, pls search "easypermissions android"
             EasyPermissions : 'pub.devrel:easypermissions:0.2.1',
             //Banner
+            Nineoldandroids : 'com.nineoldandroids:library:2.4.0',
             FlycoBanner     : 'com.flyco.banner:FlycoBanner_Lib:2.0.2@aar',
             //FlycoTabLayout segmentTab(switch button) 顶部切换按钮
             FlycoTabLayout  : 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar',

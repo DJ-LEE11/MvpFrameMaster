@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <include
-        android:id="@+id/header_btn_layout"
-        layout="@layout/header_btn_layout" />
-    <TextView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:banner="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:scrollbars="none">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="发现"
-        android:textSize="20dp"
-        android:id="@+id/tv"/>
+        android:background="#ffffff"
+        android:orientation="vertical">
+        <include
+            android:id="@+id/header_btn_layout"
+            layout="@layout/header_btn_layout"/>
 
-</RelativeLayout>
+        <com.example.mvpframe.ui.SimpleImageBanner
+            android:id="@+id/simpleBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            banner:bb_indicatorGap="12dp"
+            banner:bb_indicatorHeight="8dp"
+            banner:bb_indicatorWidth="8dp"
+            banner:bb_scale="0.5625"/>
+
+
+        <com.example.mvpframe.ui.SimpleImageBanner
+            android:id="@+id/OutIndicatorBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            banner:bb_scale="0.5625"/>
+
+
+        <com.example.libflycobanner.indicator.FlyPageIndicator
+            android:id="@+id/indicatorRes"
+            xmlns:fpi="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            fpi:fpi_gap="12dp"
+            fpi:fpi_height="8dp"
+            fpi:fpi_width="8dp"
+            fpi:fpi_selectRes="@mipmap/banner_point_select"
+            fpi:fpi_unselectRes="@mipmap/banner_point_unselect"
+            />
+    </LinearLayout>
+</ScrollView>

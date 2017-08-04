@@ -1,1 +1,1 @@
-include ':app', ':lib.rx', ':lib.util'
+include ':app', ':lib.rx', ':lib.util', ':lib.flycobanner'
