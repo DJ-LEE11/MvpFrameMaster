@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScaleBannerView">
+        <!-- 是否显示三张图片 -->
+        <attr name="open_three_mode" format="boolean"/>
+        <!-- 轮播是否缩放 -->
+        <attr name="isScale" format="boolean"/>
+        <!-- 是否轮播图片 -->
+        <attr name="canLoop" format="boolean"/>
+        <!-- 间隔时间，默认5s-->
+        <attr name="delayTime" format="integer"/>
+        <attr name="indicatorPaddingLeft" format="dimension"/>
+        <attr name="indicatorPaddingRight" format="dimension"/>
+        <attr name="indicatorAlign">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

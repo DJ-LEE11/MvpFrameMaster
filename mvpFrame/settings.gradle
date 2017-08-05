@@ -1,1 +1,1 @@
-include ':app', ':lib.rx', ':lib.util', ':lib.flycobanner'
+include ':app', ':lib.rx', ':lib.util', ':lib.flycobanner', ':lib.scalebanner'
