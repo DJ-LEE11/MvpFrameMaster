@@ -1,5 +1,6 @@
 package com.example.mvpframe.fragment;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,11 +8,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.libflycobanner.indicator.FlyPageIndicator;
+import com.example.libscalebanner.ScaleBannerView;
+import com.example.libscalebanner.holder.ScaleHolderCreator;
+import com.example.libscalebanner.holder.ScaleViewHolder;
+import com.example.libutil.ImageLoaderUtils;
 import com.example.libutil.ToastUtils;
 import com.example.mvpframe.R;
+import com.example.mvpframe.bean.BannerBean;
 import com.example.mvpframe.ui.SimpleImageBanner;
 import com.example.mvpframe.util.BannerDataProvider;
 import com.example.mvpframe.util.ToolbarUtils;
@@ -31,6 +38,8 @@ public class DiscoverFragment extends Fragment {
     SimpleImageBanner mOutIndicatorBanner;
     @Bind(R.id.indicatorRes)
     FlyPageIndicator mIndicatorRes;
+    @Bind(R.id.ScaleBanner)
+    ScaleBannerView mScaleBanner;
 
     public static DiscoverFragment newInstance() {
         if (null == fragment) {
@@ -48,8 +57,10 @@ public class DiscoverFragment extends Fragment {
         ButterKnife.bind(this, view);
         initSimpleBanner();
         initOutIndicatorBanner();
+        initScaleBanner();
         return view;
     }
+
 
     private void initTitle(View view) {
         View header = view.findViewById(R.id.header_btn_layout);
@@ -86,7 +97,56 @@ public class DiscoverFragment extends Fragment {
         });
         //设置指示器
         mIndicatorRes.setIsSnap(true)
-                     .setViewPager(mOutIndicatorBanner.getViewPager(),BannerDataProvider.getList().size());
+                .setViewPager(mOutIndicatorBanner.getViewPager(), BannerDataProvider.getList().size());
+    }
+
+    private void initScaleBanner() {
+        //隐藏显示器
+        mScaleBanner.setIndicatorVisible(false);
+        mScaleBanner.setBannerPageClickListener(new ScaleBannerView.BannerPageClickListener() {
+            @Override
+            public void onPageClick(View view, int position) {
+                ToastUtils.show(getActivity(), "position--->" + position);
+            }
+        });
+
+        //绑定数据
+        mScaleBanner.setPages(BannerDataProvider.getList(), new ScaleHolderCreator<BannerViewHolder>() {
+            @Override
+            public BannerViewHolder createViewHolder() {
+                return new BannerViewHolder();
+            }
+        });
+        mScaleBanner.start();
+    }
+
+    public static class BannerViewHolder implements ScaleViewHolder<BannerBean> {
+        private ImageView mImageView;
+        @Override
+        public View createView(Context context) {
+            // 返回页面布局文件
+            View view = LayoutInflater.from(context).inflate(R.layout.scale_banner_item,null);
+            mImageView = (ImageView) view.findViewById(R.id.scale_banner_image);
+            return view;
+        }
+
+        @Override
+        public void onBind(Context context, int position, BannerBean data) {
+            ImageLoaderUtils.display(context,mImageView,data.imgUrl);
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mScaleBanner.start();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mScaleBanner.pause();
     }
 
     @Override

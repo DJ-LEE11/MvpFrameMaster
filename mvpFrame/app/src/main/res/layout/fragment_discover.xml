@@ -45,5 +45,16 @@
             fpi:fpi_selectRes="@mipmap/banner_point_select"
             fpi:fpi_unselectRes="@mipmap/banner_point_unselect"
             />
+
+        <com.example.libscalebanner.ScaleBannerView
+            android:id="@+id/ScaleBanner"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginTop="20dp"
+            banner:indicatorAlign="center"
+            banner:open_three_mode="true"
+            banner:isScale="true"
+            banner:canLoop="true"
+            />
     </LinearLayout>
 </ScrollView>
