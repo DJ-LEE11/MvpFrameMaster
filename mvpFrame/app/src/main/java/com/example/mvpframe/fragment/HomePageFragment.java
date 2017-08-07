@@ -94,6 +94,4 @@ public class HomePageFragment extends BaseFragment implements IFragmentContract.
     public void showWeather(String weatherInfo) {
         mTvInfo.setText(weatherInfo);
     }
-
-
 }

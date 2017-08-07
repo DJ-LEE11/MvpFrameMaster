@@ -117,7 +117,6 @@ public class DiscoverFragment extends Fragment {
                 return new BannerViewHolder();
             }
         });
-        mScaleBanner.start();
     }
 
     public static class BannerViewHolder implements ScaleViewHolder<BannerBean> {
